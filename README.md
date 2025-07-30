@@ -1,19 +1,6 @@
 # AI Web Crawler
 
-This is a Python-based AI Web Crawler that crawls websites and collects data. It uses advanced algorithms and techniques to navigate web pages and extract valuable information, which can be used for various purposes such as data mining, SEO analysis, or gathering data for machine learning models.
-
-## Features
-- **Crawling**: It can crawl through multiple web pages recursively.
-- **Data Extraction**: Extracts useful information like text, links, images, etc.
-- **AI Integration**: It leverages machine learning to analyze and process the data it collects.
-- **Configurable**: You can configure which data to scrape, from which websites, and how deep to crawl.
-
-## Requirements
-
-- Python 3.x
-- `requests` library (for making HTTP requests)
-- `BeautifulSoup` or `Scrapy` (for web scraping)
-- Any additional dependencies can be added to the `requirements.txt`
+This is a Python-based AI Web Crawler that crawls websites and collects data. It uses techniques to navigate web pages and extract valuable information, which can be used for various purposes such as data mining, SEO analysis, or gathering data for machine learning models.
 
 ## Installation
 
@@ -51,10 +38,31 @@ This is a Python-based AI Web Crawler that crawls websites and collects data. It
 
 1. Once you've installed the dependencies, you can run the web crawler script:
    ```
-   python crawler.py
+   python app.py
    ```
 
 2. Customize the script with your desired crawling settings, such as the URLs to start from, the depth of the crawl, and the type of data to scrape.
+
+> #2 Is not necessary, changes may be made if wanted.
+
+3. Send a POST request with your url like this:
+
+```bash
+curl -X POST http://127.0.0.1:8000/summarize \
+     -H "Content-Type: application/json" \
+     -d '{"url": "https://your-url-here.com"}'
+```
+
+Example:
+
+```bash
+siddsehgal@111 ~ % curl -X POST http://127.0.0.1:8000/summarize \
+     -H "Content-Type: application/json" \
+     -d '{"url": "https://example.com"}'      
+{
+  "summary": "The content is about the use of the domain \"example.com\" for illustrative purposes in documents without needing prior permission. It states that the domain can be freely utilized in literature as an example without coordination or approval. Additional information is available for reference."
+}
+```
 
 ## Contributing
 
